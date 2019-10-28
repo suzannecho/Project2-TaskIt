@@ -29,7 +29,7 @@
 </nav>
 
 <div class="container" id="user-menu">
-    <h2>Host</h2>
+    <h2>Task List</h2>
     <a class="btn btn-default btn-list" id="btn-Task-create">Create New Task<i class="fa fa-chevron-right" aria-hidden="true"></i></a>    
     <br/>
     <h4>Your Tasks</h4>
@@ -49,7 +49,7 @@
                     <td>{{this.dataValues.Task.Task_name}}</td>
                     <td>{{this.dataValues.Task.Task_date}}</td>
                     <td>{{this.dataValues.Task.location}}</td>
-                    <td><a class="btn" href="/memberlist/{{this.TaskId}}">Add a member</a></td>
+                    <td><a class="btn" href="/tasklist/{{this.TaskId}}">Add a task</a></td>
                 </tr>         
         </tbody>
         </table>
@@ -65,43 +65,38 @@
                 data-off="Can't Go" />
         </p>
     </div>
-    <div id="Task-meals">
-        <div class="radio" id="Task-meal">
-            <h3>Meal Options</h3>
-            <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> Chicken Parmesan
-                </label>
-        </div>
-        <div class="radio">
-            <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Flatiron Steak
-                </label>
-        </div>
-        <div class="radio">
-            <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3"> Vegetarian
-                </label>
-        </div>
+    <div id="Task-activity-options">
+        <div class="checkbox">
+            <h3>Choose one or more activities to attend </h3>
+  <label><input type="checkbox" value="">Bowling</label>
+</div>
+<div class="checkbox">
+  <label><input type="checkbox" value="">Dancing</label>
+</div>
+<div class="checkbox disabled">
+  <label><input type="checkbox" value="">Movie</label>
+</div>
     </div>
     <div id="Task-details">
         <h3>Task Details</h3>
 
+         <h4> Event Name </h4>
+         <p>Kara's 27th Birthday</p>
         <h4>Date &amp; Time</h4>
-        <p>Wednesday, August 7, 2017</p>
-        <p>Ceremony 2:00pm - 4:00pm
-            <br /> Reception 5:00pm - 10:00pm</p>
+        <p>Monday, December 5, 2019</p>
+        <p> 5:00 pm  - 7:00 pm </p>
 
         <h4>Dress Code</h4>
-        <p>Formal</p>
+        <p> Party Attire</p>
 
         <h4>Location</h4>
-        <p>123 Bob Street,
-            <br /> Sometown, State, 11111</p>
+        <p> 5th Avenue
+            <br /> Seattle, WA 98213</p>
 
-        <p>Parking: Valet, $6</p>
+        <p>**Free Parking **</p>
     </div>
     <hr />
-    <button class="btn btn-default btn-lg btn-block">Add to iCal</button>
+    <button class="btn btn-default btn-lg btn-block">Add to Apple Calendar</button>
     <button class="btn btn-default btn-lg btn-block">Add to Google Calendar</button>
     <hr />
     <button class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#modal-Task-delete">Delete This Task</button>
@@ -110,7 +105,7 @@
 <!-- new Task -->
 <div class="container" id="Task-create">
     <h2>Create a New Task</h2>
-    <form id="new-Task" name="Task" method="post" action="/memberlist">
+    <form id="new-Task" name="Task" method="post" action="/tasklist">
         <div class="form-group">
             <label for="Task_name">Task Name</label>
             <input type="text" class="form-control" id="Task_name" name="Task_name" placeholder="Joe's Birthday">
@@ -139,7 +134,7 @@
                 <h4 class="modal-title text-danger">Delete This Task</h4>
             </div>
             <div class="modal-body">
-                <p>Are you sure you wan't to delete <span class="Task-name">Project X</span>?</p>
+                <p>Are you sure you wan't to delete <span class="Task-name">Kara's 27th Birthday</span>?</p>
                 <p>Your RSVP will be set to <strong>Not Attending</strong> and you will not be able to access the Task's information.
                 </p>
                 <p class="lead text-danger">This action cannot be undone.</p>
@@ -151,35 +146,35 @@
     </div>
 </div>
 
-<div id="modal-Task-add-member" class="modal fade" tabindex="-1" role="dialog">
+<div id="modal-Task-add-task" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Add a a team member</h4>
+                <h4 class="modal-title">Add a a task</h4>
             </div>
             <form>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="add-member-fname">First Name</label>
-                        <input type="text" class="form-control" id="add-member-fname" placeholder="Bob">
+                        <label for="add-task-fname">First Name</label>
+                        <input type="text" class="form-control" id="add-task-fname" placeholder="Bob">
                     </div>
                     <div class="form-group">
-                        <label for="add-member-lname">Last Name</label>
-                        <input type="text" class="form-control" id="add-member-lname" placeholder="Dole">
+                        <label for="add-task-lname">Last Name</label>
+                        <input type="text" class="form-control" id="add-task-lname" placeholder="Dole">
                     </div>
                     <div class="form-group">
-                        <label for="add-member-phone">Phone Number</label>
-                        <input type="tel" class="form-control" id="add-member-phone" placeholder="">
+                        <label for="add-task-phone">Phone Number</label>
+                        <input type="tel" class="form-control" id="add-task-phone" placeholder="">
                     </div>
                     <div class="form-group">
-                        <label for="add-member-phone">Email</label>
-                        <input type="email" class="form-control" id="add-member-email" placeholder="">
+                        <label for="add-task-phone">Email</label>
+                        <input type="email" class="form-control" id="add-task-email" placeholder="">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <div class="half-wide pull-left">
-                        <button class="btn btn-primary btn-lg btn-block" id="btn-add-member-modal" data-dismiss="modal">Add Team Member</button>
+                        <button class="btn btn-primary btn-lg btn-block" id="btn-add-task-modal" data-dismiss="modal">Add Team task</button>
                     </div>
                     <div class="half-wide pull-right">
                         <button class="btn btn-default btn-lg btn-block" data-dismiss="modal">Cancel</button>

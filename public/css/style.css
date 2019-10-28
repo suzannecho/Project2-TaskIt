@@ -60,9 +60,9 @@
 }
 
 .btn-login {
-    background-color: #59B2E0;
+    background-color: purple, 
     outline: none;
-    color: #fff;
+    color: skyblue;
     font-size: 14px;
     height: auto;
     font-weight: normal;
@@ -74,8 +74,8 @@
 .btn-login:hover,
 .btn-login:focus {
     color: #fff;
-    background-color: #53A3CD;
-    border-color: #53A3CD;
+    background-color: teal;
+    border-color: teal
 }
 
 .forgot-password {
@@ -109,7 +109,7 @@
 }
 
 body {
-    background: #fff url('../images/bg.png') 0 0 repeat;
+    background: url('../images/.png') 0 0 repeat;
     color: #444;
 }
 
@@ -131,41 +131,43 @@ h4 {
 
 h2,
 h3 {
-    border-bottom: 1px dashed #acd69a;
+    border-bottom: 1px dashed purple;
 }
 
 h2 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 h3 {
     margin-top: 20px;
-    border-top: 3px solid #acd69a;
+    border-top: 3px solid  purple;
     padding: 10px 0;
+}
+
+#Jumbotron {
+    color: 
 }
 
 
 
-
-#splash {
+#layout {
     text-align: center;
     margin-top: 10px;
 }
 
-#splash h1 {
-    font-family: 'Oleo Script Swash Caps', cursive;
+#heading1 {
+    font-family: 'Times New Roman', Times, serif
     text-align: center;
-    font-size: 70px;
+    font-size: 60px;
     letter-spacing: -3px;
-    text-shadow: -2px 2px 0 blueviolet;
-    color: blue;
+    color: navy;
 }
 
-#splash .logo {
-    width: 300px;
-    height: 300px;
-    background: #fff8d2 url('../images/alpacalogo.png') 0 0 no-repeat;
-    margin: 40px auto;
+#layout .logo {
+    width: 430px;
+    height: 520px;
+    background: #fff8d2 url('../images/notes.png') 0 0 no-repeat;
+    margin: 30px auto;
     border-radius: 20px;
     border: 2px solid black;
 }

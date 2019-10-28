@@ -1,16 +1,18 @@
-<div class="container" id="splash">
-    <h1>TaskIt- Your Daily Task Planner! <h1>
-        <p> List and note down any tasks. Collaborate with team mates!</p>
+<div class="container" id="layout">
+    <div class="jumbotron">
+  <h1 class="display-4" id="heading1">TaskIt- Your Daily To Do Planner!</h1>
+        <p> List and track your common tasks. Add to your calendar as a reminder.</p>
     <p class="logo"></p>
     <a class="btn btn-secondary btn-lg btn-block" id="btn-login-github" href="/auth/github"><i class="icon-github" aria-hidden="true"></i> Log in with Github</a>
     <hr />
-    <p>Not a Github User?</p>
+    <p> Start a new list  / Access your list here</p>
     <div class="half-wide pull-left">
-        <a class="btn btn-default btn-lg btn-block" id="btn-login" data-toggle="modal" data-target="#modal-signup">Register</a>
+        <a class="btn btn-default btn-lg btn-block" id="btn-login" data-toggle="modal" data-target="#modal-signup">Sign Up</a>
     </div>
     <div class="half-wide pull-right">
         <a class="btn btn-default btn-lg btn-block" id="btn-login" data-toggle="modal" data-target="#modal-login">Log In</a>
     </div>
+</div>
 </div>
 
 <!-- ================================================== -->
@@ -21,7 +23,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Log in (without Facebook)</h4>
+                <h4 class="modal-title">Log in</h4>
             </div>
             <form id="login" name="login" method="post" action="/login">
                 <div class="modal-body">
@@ -47,7 +49,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Sign Up (No Github account)</h4>
+                <h4 class="modal-title">Sign Up for a new account</h4>
             </div>
             <form id="signup" name="signup" method="post" action="/signup">
                 <div class="modal-body">
