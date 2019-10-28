@@ -1,0 +1,192 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" id="btn-navmenu" class="disabled navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            <div class="logo"></div>
+            <span class="navbar-brand" href="#">TaskIt</span>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <div id="profile">
+                <div id="user-picture">
+                    <i class="fa fa-user pull-left" aria-hidden="true"></i>
+                </div>
+                <h3></h3>
+                <p></p>
+            </div>
+            <p class="phone"><i class="fa fa-phone" aria-hidden="true"></i> <span></span> <i class="fa fa-pencil" aria-hidden="true"></i></p>
+            <p class="email"><i class="fa fa-envelope" aria-hidden="true"></i> <span></span> <i id="edit-email" class="fa fa-pencil" aria-hidden="true"></i></p>
+            <p><a class="btn btn-default btn-md btn-block" href="/dashboard" id="btn-Tasks">My Tasks</a></p>
+            <p><a class="btn btn-default btn-md btn-block" href="/logout" id="btn-logout">Log Out</a></p>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container" id="user-menu">
+    <h2>Host</h2>
+    <a class="btn btn-default btn-list" id="btn-Task-create">Create New Task<i class="fa fa-chevron-right" aria-hidden="true"></i></a>    
+    <br/>
+    <h4>Your Tasks</h4>
+    {{#each Tasks}} {{#if this.host}}
+    <!-- if its in user_Tasks use this.property
+            if its in users or Tasks its this.dataValues.FOREIGNTABLE.column-->
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Task Name</th>
+                <th>Task Date</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody class="Tasks-container">
+                <tr>
+                    <td>{{this.dataValues.Task.Task_name}}</td>
+                    <td>{{this.dataValues.Task.Task_date}}</td>
+                    <td>{{this.dataValues.Task.location}}</td>
+                    <td><a class="btn" href="/memberlist/{{this.TaskId}}">Add a member</a></td>
+                </tr>         
+        </tbody>
+        </table>
+    {{/if}}{{/each}}
+
+</div>
+
+<div class="container" id="Task-details">
+    <h2 class="Task-name"></h2>
+    <div id="Task-rsvp">
+        <p>RSVP Status
+            <input id="toggle-rsvp" name="rsvp" type="checkbox" checked data-toggle="toggle" data-width="120" data-height="34" data-on="Attending"
+                data-off="Can't Go" />
+        </p>
+    </div>
+    <div id="Task-meals">
+        <div class="radio" id="Task-meal">
+            <h3>Meal Options</h3>
+            <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> Chicken Parmesan
+                </label>
+        </div>
+        <div class="radio">
+            <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Flatiron Steak
+                </label>
+        </div>
+        <div class="radio">
+            <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3"> Vegetarian
+                </label>
+        </div>
+    </div>
+    <div id="Task-details">
+        <h3>Task Details</h3>
+
+        <h4>Date &amp; Time</h4>
+        <p>Wednesday, August 7, 2017</p>
+        <p>Ceremony 2:00pm - 4:00pm
+            <br /> Reception 5:00pm - 10:00pm</p>
+
+        <h4>Dress Code</h4>
+        <p>Formal</p>
+
+        <h4>Location</h4>
+        <p>123 Bob Street,
+            <br /> Sometown, State, 11111</p>
+
+        <p>Parking: Valet, $6</p>
+    </div>
+    <hr />
+    <button class="btn btn-default btn-lg btn-block">Add to iCal</button>
+    <button class="btn btn-default btn-lg btn-block">Add to Google Calendar</button>
+    <hr />
+    <button class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#modal-Task-delete">Delete This Task</button>
+</div>
+
+<!-- new Task -->
+<div class="container" id="Task-create">
+    <h2>Create a New Task</h2>
+    <form id="new-Task" name="Task" method="post" action="/memberlist">
+        <div class="form-group">
+            <label for="Task_name">Task Name</label>
+            <input type="text" class="form-control" id="Task_name" name="Task_name" placeholder="Joe's Birthday">
+        </div>
+        <div class="form-group">
+            <label for="Task_date">Date &amp; Time</label>
+            <div class="input-group date" id="container-new-Task-datetime">
+                <input type='text' class="form-control" id="Task_date" name="Task_date" />
+                <span class="btn btn-default input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" class="form-control" id="location" name="location" placeholder="">
+        </div>
+<!-- ================================================== -->
+<!-- =================     MODALS     ================= -->
+
+<div id="modal-Task-delete" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-danger">Delete This Task</h4>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you wan't to delete <span class="Task-name">Project X</span>?</p>
+                <p>Your RSVP will be set to <strong>Not Attending</strong> and you will not be able to access the Task's information.
+                </p>
+                <p class="lead text-danger">This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger btn-block" data-dismiss="modal">Yes, Remove me from the Task and Delete it</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-Task-add-member" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Add a a team member</h4>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="add-member-fname">First Name</label>
+                        <input type="text" class="form-control" id="add-member-fname" placeholder="Bob">
+                    </div>
+                    <div class="form-group">
+                        <label for="add-member-lname">Last Name</label>
+                        <input type="text" class="form-control" id="add-member-lname" placeholder="Dole">
+                    </div>
+                    <div class="form-group">
+                        <label for="add-member-phone">Phone Number</label>
+                        <input type="tel" class="form-control" id="add-member-phone" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="add-member-phone">Email</label>
+                        <input type="email" class="form-control" id="add-member-email" placeholder="">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="half-wide pull-left">
+                        <button class="btn btn-primary btn-lg btn-block" id="btn-add-member-modal" data-dismiss="modal">Add Team Member</button>
+                    </div>
+                    <div class="half-wide pull-right">
+                        <button class="btn btn-default btn-lg btn-block" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="/js/api-script.js"></script>

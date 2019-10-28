@@ -1,0 +1,359 @@
+.panel-login {
+    border-color: #ccc;
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.panel-login>.panel-heading {
+    color: #00415d;
+    background-color: #fff;
+    border-color: #fff;
+    text-align: center;
+}
+
+.panel-login>.panel-heading a {
+    text-decoration: none;
+    color: #666;
+    font-weight: bold;
+    font-size: 15px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+
+.panel-login>.panel-heading a.active {
+    color: #029f5b;
+    font-size: 18px;
+}
+
+.panel-login>.panel-heading hr {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    clear: both;
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+    background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+    background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+    background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+}
+
+.panel-login input[type="text"],
+.panel-login input[type="email"],
+.panel-login input[type="password"] {
+    height: 45px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+
+.panel-login input:hover,
+.panel-login input:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-color: #ccc;
+}
+
+.btn-login {
+    background-color: #59B2E0;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    height: auto;
+    font-weight: normal;
+    padding: 14px 0;
+    text-transform: uppercase;
+    border-color: #59B2E6;
+}
+
+.btn-login:hover,
+.btn-login:focus {
+    color: #fff;
+    background-color: #53A3CD;
+    border-color: #53A3CD;
+}
+
+.forgot-password {
+    text-decoration: underline;
+    color: #888;
+}
+
+.forgot-password:hover,
+.forgot-password:focus {
+    text-decoration: underline;
+    color: #666;
+}
+
+.btn-register {
+    background-color: #1CB94E;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    height: auto;
+    font-weight: normal;
+    padding: 14px 0;
+    text-transform: uppercase;
+    border-color: #1CB94A;
+}
+
+.btn-register:hover,
+.btn-register:focus {
+    color: #fff;
+    background-color: #1CA347;
+    border-color: #1CA347;
+}
+
+
+/* --------------------------------------- emily's stuff here --- */
+
+body {
+    background: #fff url('../images/bg.png') 0 0 repeat;
+    color: #444;
+}
+
+.container {
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+
+/* ------- Text -------- */
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Bree Serif', 'Trebuchet MS', Georgia, serif;
+    color: slateblue;
+}
+
+h2,
+h3 {
+    border-bottom: 1px dashed #acd69a;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+h3 {
+    margin-top: 20px;
+    border-top: 3px solid #acd69a;
+    padding: 10px 0;
+}
+
+
+/* ---------  welcome/splash screen -----------*/
+
+#splash {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#splash h1 {
+    font-family: 'Oleo Script Swash Caps', cursive;
+    text-align: center;
+    font-size: 70px;
+    letter-spacing: -3px;
+    text-shadow: -2px 2px 0 blueviolet;
+    color: blue;
+}
+
+#splash .logo {
+    width: 300px;
+    height: 300px;
+    background: #fff8d2 url('../images/alpacalogo.png') 0 0 no-repeat;
+    margin: 40px auto;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+
+/* ----------  NAV BAR ----------------*/
+
+nav .container {
+    margin-bottom: 0;
+}
+
+nav {
+    margin-top: -60px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(174, 158, 152, 1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(174, 158, 152, 1);
+    box-shadow: 0px 0px 10px 0px rgba(174, 158, 152, 1);
+}
+
+nav .logo {
+    width: 40px;
+    height: 40px;
+    margin: 6px;
+    float: left;
+    background-color: #fff8d2;
+    background-image: url('../images/alpacalogo.png');
+    background-repeat: no-repeat;
+    background-size: 40px;
+    border-radius: 4px;
+    border: 1px solid #beaca5;
+}
+
+.navbar-default .navbar-brand {
+    padding: 17px 15px;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    text-align: center;
+    letter-spacing: -1px;
+    color: #609b57;
+    font-size: 24px;
+}
+
+.navbar-collapse {
+    background-color: #d7ccc7;
+    border-bottom: 1px solid #a28980!important;
+}
+
+.navbar-inverse {
+    border-color: #bbb;
+}
+
+
+/* ---- Responsive Fix to keep nav bar collapsed in wide viewports ---- */
+
+@media (min-width: 768px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+}
+
+
+/* --------- List Buttons (Dashboard) ---------- */
+
+.container .btn-list {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 3px 0 3px 0;
+    color: #782e5d;
+}
+
+.container .btn-list i {
+    text-align: right;
+    float: right;
+    margin: 5px 0 0 auto;
+}
+
+
+/* ---------- navbar profile --------- */
+
+#profile {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+#profile i {
+    font-size: 50px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+#profile h3 {
+    border-top: 0 none;
+    border-bottom: 0 none;
+    margin: 20px 0 5px 0;
+    padding: 0;
+    color: #444;
+}
+
+.navbar-collapse hr {
+    border-top-color: #ccc;
+}
+
+#profile-phone {
+    font-size: 18px;
+    margin-left: 72px;
+}
+
+#user-picture {
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 15px;
+}
+
+#user-picture img {
+    border-radius: 4px;
+    border: 1px solid #beaca5;
+}
+
+
+/* -------- general purpose ------- */
+
+.half-wide {
+    width: 50%;
+}
+
+.half-wide.pull-right .btn {
+    margin-left: 5px;
+}
+
+#task-rsvp {
+    padding: 5px 0;
+    line-height: 32px;
+}
+
+hr {
+    border-top: 1px dashed #acd69a;
+}
+
+
+/* ------------  new tasks --------------*/
+
+#member-list tr {
+    border-bottom: 1px solid #ccc;
+}
+
+#member-list tr td {
+    padding: 3px 5px;
+    vertical-align: middle;
+}
+
+
+/* --------------------- FORMS ---------------
+-------------------------------------------*/
+
+.input-group {
+    margin: 2px 0 8px 0;
+}
+
+input.form-control,
+span.input-group-addon {
+    height: 36px;
+    border: 1px solid #beaca5;
+}
+
+
+/* ---------------  TOGGLE SWITCHES ---------------
+-------------------------------------------------*/
+
+.toggle.btn {
+    border-radius: 4px;
+}
+
+#task-rsvp .toggle {
+    float: right;
+}

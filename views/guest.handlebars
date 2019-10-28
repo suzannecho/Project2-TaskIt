@@ -1,0 +1,81 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" id="btn-navmenu" class="disabled navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            <div class="logo"></div>
+            <span class="navbar-brand" href="#">TaskIt</span>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <div id="profile">
+                <div id="user-picture">
+                    <i class="fa fa-user pull-left" aria-hidden="true"></i>
+                </div>
+                <h3></h3>
+            </div>
+            <p class="error text-danger"></p>
+            <p class="phone"><i class="fa fa-phone" aria-hidden="true"></i> <span></span> <a class="btn btn-default edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></p>
+            <p class="email"><i class="fa fa-envelope" aria-hidden="true"></i> <span></span> <a class="btn btn-default edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></p>
+            <hr />
+            <p><a class="btn btn-default btn-md btn-block" href="/dashboard" id="btn-tasks">My tasks</a></p>
+            <p><a class="btn btn-default btn-md btn-block" href="/logout" id="btn-logout">Log Out</a></p>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container" id="task-create-members">
+    <h2>Add Team members</h2>
+    <h4>{{this.task.task_name}} at {{this.task.location}}</h4>
+    <form id="memberAdd" name="memberAdd" method="post" action="/memberlist/{{this.task.id}}">
+        <div class="form-group">
+            <label for="firstname">First name</label>
+            <input type="text" name="firstname" class="form-control" placeholder="Joe">
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last name</label>
+            <input type="text" name="lastname" class="form-control" placeholder="Smith">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone #</label>
+            <input type="text" name="phone" class="form-control" placeholder="+1-512-123-4567">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" class="form-control" id="userid" placeholder="you@domain.com">
+        </div>
+        <input type="submit" class="btn btn-primary btn-md submit">
+    </form>
+
+    <hr />
+    <h4>Collaborating Team members</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Email Address</th>
+                <th>Active </th>
+            </tr>
+        </thead>
+        <!--everyone triggers as a host idk why-->
+        {{#each user_task}} {{#if this.host}}
+        <tbody id="member-container">
+            <tr>
+                <td>{{this.user.firstname}} {{this.user.lastname}}</td>
+                <td>{{this.user.phone}}</td>
+                <td>{{this.user.email}}</td>
+                <td>{{this.attending}}</td>
+             
+            </tr>
+        </tbody>
+        {{/if}} {{/each}}
+    </table>
+    </div>
+</div>
+<script src="/js/api-script.js"></script>
