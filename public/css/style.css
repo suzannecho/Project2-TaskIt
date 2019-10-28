@@ -108,9 +108,6 @@
     border-color: #1CA347;
 }
 
-
-/* --------------------------------------- emily's stuff here --- */
-
 body {
     background: #fff url('../images/bg.png') 0 0 repeat;
     color: #444;
@@ -122,7 +119,7 @@ body {
 }
 
 
-/* ------- Text -------- */
+
 
 h1,
 h2,
@@ -148,7 +145,7 @@ h3 {
 }
 
 
-/* ---------  welcome/splash screen -----------*/
+
 
 #splash {
     text-align: center;
@@ -173,8 +170,7 @@ h3 {
     border: 2px solid black;
 }
 
-
-/* ----------  NAV BAR ----------------*/
+/*<---Nav Bar-->  */
 
 nav .container {
     margin-bottom: 0;
