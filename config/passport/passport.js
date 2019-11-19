@@ -159,8 +159,9 @@ module.exports = function (passport, user) {
     var GitHubStrategy = require('passport-github').Strategy;
 
 passport.use(new GitHubStrategy({
-    clientID:  "8db72f977fb1771924c0",
-    clientSecret: "1f2db8db6ba31d111f6a3ae4cb1989d663b1de16",
+    
+    clientID: GITHUB_CLIENT_ID,
+    clientSecret: GITHUB_CLIENT_SECRET,
     callbackURL: "http://127.0.0.1:3000/auth/github/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
