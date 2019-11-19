@@ -14,6 +14,8 @@ var PORT = process.env.PORT || 8080;
 
 var db = require("./models");
 
+require('dotenv').config();
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
