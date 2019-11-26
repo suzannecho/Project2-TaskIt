@@ -1,5 +1,8 @@
 # Project2-TaskIt
 
+Link to Site: https://taskit-yourdailytaskplanner.herokuapp.com/
+
+
 *Note-taking web application designed for students to take notes for any task or assignment*
 * Technologies Used: Sequelize, Javascript, MySQL, Node, Express, Github
 * Utilized the Github login user authentication for sign in
