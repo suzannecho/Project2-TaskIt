@@ -28,7 +28,7 @@
     "mysql": "^2.17.1",
     "mysql2": "^2.0.0",
     "node-webhooks": "^1.1.32",
-    "passport": "^0.3.2",
+    "passport": "^0.6.0",
     "passport-facebook": "^2.1.1",
     "passport-github": "^1.1.0",
     "passport-local": "^1.0.0",
